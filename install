@@ -1,0 +1,52 @@
+#!/bin/bash
+declare -r install_path='/usr/local/bin/'
+
+uninstall () {
+  rm -f ${install_path}pp
+  rm -f ${install_path}n
+  rm -f ${install_path}p
+  rm -f ${install_path}s
+  # if [[ $? -eq 0 ]]; then
+  #   echo "uninstalled"
+  #   exit 0
+  # else
+  #   echo "not uninstalled"
+  #   exit 1
+  # fi
+  exit 0
+}
+
+while [ $# -gt 0 ]; do
+  case $1 in
+    -u)
+      uninstall
+      ;;
+    *)
+      echo "unknown parameter"
+      exit 1
+  esac
+done
+
+cp playPause ${install_path}pp
+cp next ${install_path}n
+cp previous ${install_path}p
+cp stop ${install_path}s
+# if [[ $? -eq 0 ]]; then
+#   echo "files copied"
+# else
+#   echo "files could not copied" >&2
+#   exit 1
+# fi
+
+chmod +x ${install_path}pp
+chmod +x ${install_path}n
+chmod +x ${install_path}p
+chmod +x ${install_path}s
+# if [[ $? -eq 0 ]]; then
+#   echo "exec roles granted"
+# else
+#   echo "exec roles could not granted" >&2
+#   exit 1
+# fi
+
+exit 0
