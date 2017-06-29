@@ -3,12 +3,14 @@
 Command line control for spotify. Just use **pp** for Play/Pause, **p** for Previous song, **n** for Next song, **s** for Stop.
 
 Spotify linux client accepts [MPRIS](https://specifications.freedesktop.org/mpris-spec/latest/), Media Player Remote Interfacing Specification, this scripts use this communication-interface.
-## Shortcuts
+## Commands
 
-* ```pp```: Play or Pause.
-* ```n```: Next.
-* ```p```: Previous.
+* ```pp```: Play or Pause current song.
 * ```s```: Stop.
+* ```p```: Previous (one time).
+  * ```p #times```: Previous #times.
+* ```n```: Next (one time).
+  * ```n #times```: Next #times.
 
 ## Installation:
 ```
